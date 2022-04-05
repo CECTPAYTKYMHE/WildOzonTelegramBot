@@ -216,6 +216,7 @@ async def delete_url(message: types.Message, state: FSMContext):
             logging.info(f'Пользователь {message.from_user.id} удалил ссылку под номером {i}')
             success = True
         except:
+            success = False
             await bot.send_message(message.from_user.id, 'Вы что-то ввели не так, попробуйте еще раз')
             await state.finish()
             break
